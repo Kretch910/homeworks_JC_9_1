@@ -1,16 +1,19 @@
-public class Ticket {
+import com.fasterxml.jackson.annotation.JsonProperty;
 
+public class Fact {
+
+    @JsonProperty("id")
     private String id;
+    @JsonProperty("text")
     private String text;
+    @JsonProperty("type")
     private String type;
+    @JsonProperty("user")
     private String user;
-    private String upvotes;
+    @JsonProperty("upvotes")
+    private int upvotes;
 
-    public String getId() {
-        return id;
-    }
-
-    public String getUpvotes() {
+    public int getUpvotes() {
         return upvotes;
     }
 
@@ -26,24 +29,8 @@ public class Ticket {
         return text;
     }
 
-    public void setUpvotes(String upvotes) {
-        this.upvotes = upvotes;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public void setId(String id) {
-        this.id = id;
+    public String getId() {
+        return id;
     }
 
     @Override

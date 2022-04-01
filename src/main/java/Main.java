@@ -26,10 +26,10 @@ public class Main {
         CloseableHttpResponse response = httpClient.execute(request);
 
         ObjectMapper mapper = new ObjectMapper();
-        List<Ticket> tickets = mapper.readValue(response.getEntity().getContent(), new TypeReference<>() {
+        List<Fact> tickets = mapper.readValue(response.getEntity().getContent(), new TypeReference<>() {
         });
         tickets.stream()
-                .filter(ticket -> ticket.getUpvotes() != null)
+                .filter(ticket -> ticket.getUpvotes() != 0)
                 .forEach(System.out::println);
     }
 }
